@@ -1,19 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".toggle-btn");
+    const form = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
 
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            const details = button.nextElementSibling;
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-            if (details.classList.contains("hidden")) {
-                details.classList.remove("hidden");
-                details.style.display = "block";
-                button.textContent = "Hide Details";
-            } else {
-                details.classList.add("hidden");
-                details.style.display = "none";
-                button.textContent = "Show Details";
-            }
-        });
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (name === "" || email === "" || message === "") {
+            formMessage.textContent = "Please fill in all fields.";
+            formMessage.classList.remove("hidden", "success");
+            formMessage.classList.add("error");
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            formMessage.textContent = "Please enter a valid email.";
+            formMessage.classList.remove("hidden", "success");
+            formMessage.classList.add("error");
+            return;
+        }
+
+        formMessage.textContent = "Message sent successfully!";
+        formMessage.classList.remove("hidden", "error");
+        formMessage.classList.add("success");
+
+        // Clear form fields after submission
+        form.reset();
     });
+
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
 });
