@@ -141,3 +141,12 @@ html {
     scroll-behavior: smooth;
   }
   
+  .dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .dark-mode a {
+    color: #1db954; /* Adjust link colors in dark mode */
+  }
+  
