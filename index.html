@@ -26,28 +26,32 @@
         <p>Hi, my name is Annie Nguyen. I am currently studying at Humber Collegiate Institute for computer programming. Some of my interests are coding, playing video games, and outdoor activities such as hiking, and snowboarding.</p>
     </section>
 
+    <!-- Project Filtering Section -->
+    <div id="filter-buttons">
+        <button class="filter-btn" data-category="all">All</button>
+        <button class="filter-btn" data-category="javascript">JavaScript</button>
+        <button class="filter-btn" data-category="react">React</button>
+    </div>
+
     <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
 
-        <!-- Filter Buttons -->
-        <div id="filter-buttons">
-            <button class="filter-btn" data-category="all">All</button>
-            <button class="filter-btn" data-category="javascript">JavaScript</button>
-            <button class="filter-btn" data-category="react">React</button>
-        </div>
-
-        <!-- Projects -->
+        <!-- Example Project with Lazy Loading -->
         <div class="project" data-category="javascript">
             <h3>JavaScript Project</h3>
+            <img src="https://cryodragon.ca/wp-content/uploads/2016/07/Professional-Website-Design-Business-Meeting.jpg" alt="Professional Website Design Business Meeting" loading="lazy">
+
         </div>
 
         <div class="project" data-category="react">
             <h3>React Project</h3>
+            <img src="path/to/react-project.jpg" alt="React Project" loading="lazy">
         </div>
 
-        <div class="project" data-category="other">
-            <h3>Other Project</h3>
+        <div class="project" data-category="javascript">
+            <h3>Another JavaScript Project</h3>
+            <img src="path/to/another-js-project.jpg" alt="Another JavaScript Project" loading="lazy">
         </div>
     </section>
 
@@ -69,13 +73,12 @@
         </form>
     </section>
 
-    <!-- Dark Mode Toggle -->
-    <button id="theme-toggle">Toggle Dark Mode</button>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Annie Nguyen</p>
     </footer>
-    
+
+    <button id="theme-toggle">Toggle Dark Mode</button>
 </body>
 </html>
