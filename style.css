@@ -70,14 +70,39 @@ footer {
 
 }
 
+/* Project Filter Buttons */
+#filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: #8d858d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #6b5e6b;
+}
+
+/* Project Section */
 .project {
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
+/* Form Styling */
 form {
     display: flex;
     flex-direction: column;
@@ -100,7 +125,6 @@ input, textarea {
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
-
 }
 
 button {
@@ -118,6 +142,7 @@ button:hover {
     background-color: #6b5e6b;
 }
 
+/* Success and Error Message Styling */
 .details {
     margin-top: 10px;
     display: none;
@@ -134,39 +159,53 @@ button:hover {
 .error {
     color: red;
     font-weight: bold;
+}
 
+/* Dark Mode Styling */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode a {
+    color: #1db954; /* Adjust link colors in dark mode */
 }
 
 html {
     scroll-behavior: smooth;
-  }
-  
-  .dark-mode {
-    background-color: #121212;
-    color: white;
-  }
-  
-  .dark-mode a {
-    color: #1db954; /* Adjust link colors in dark mode */
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Fade-in animation */
+}
+
+/* Fade-in animation for sections */
 @keyframes fadeIn {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  .section {
+}
+
+.section {
     opacity: 0;
     animation: fadeIn 1s ease-out forwards;
-  }
+}
+
+/* Centering the project container */
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* New Additions */
+#about, #projects, #contact {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#projects {
+    margin-left: 50px;
+    margin-right: 50px;
+}
