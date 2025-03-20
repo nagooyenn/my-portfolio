@@ -150,3 +150,7 @@ html {
     color: #1db954; /* Adjust link colors in dark mode */
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+  
