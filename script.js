@@ -87,3 +87,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
   
+  const sections = document.querySelectorAll(".section");
+
+const fadeInOnScroll = () => {
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.9) {
+      section.style.opacity = 1;
+    }
+  });
+};
+
+window.addEventListener("scroll", fadeInOnScroll);
+fadeInOnScroll(); // Run on page load too
