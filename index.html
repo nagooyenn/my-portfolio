@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <h1>Annie Nguyen </h1>
+        <h1>Annie Nguyen</h1>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -24,61 +23,59 @@
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Hi, my name is Annie Nguyen. I am currently studying at Humber Collegiate Institute for computer programming. Some of my interests are coding, playing video games, and outdoor activities such as hiking, and snowboarding. </p>
+        <p>Hi, my name is Annie Nguyen. I am currently studying at Humber Collegiate Institute for computer programming. Some of my interests are coding, playing video games, and outdoor activities such as hiking, and snowboarding.</p>
     </section>
 
     <!-- Projects Section -->
-<!-- Projects Section -->
-<section id="projects">
-    <h2>My Projects</h2>
-    
-    <div class="project">
-        <h3>Project 1</h3>
-        <button class="toggle-btn">Show Details</button>
-        <p class="details hidden">This is a description of Project 1.</p>
-    </div>
+    <section id="projects">
+        <h2>My Projects</h2>
 
-    <div class="project">
-        <h3>Project 2</h3>
-        <button class="toggle-btn">Show Details</button>
-        <p class="details hidden">This is a description of Project 2.</p>
-    </div>
+        <!-- Filter Buttons -->
+        <div id="filter-buttons">
+            <button class="filter-btn" data-category="all">All</button>
+            <button class="filter-btn" data-category="javascript">JavaScript</button>
+            <button class="filter-btn" data-category="react">React</button>
+        </div>
 
-    <div class="project">
-        <h3>Project 3</h3>
-        <button class="toggle-btn">Show Details</button>
-        <p class="details hidden">This is a description of Project 3.</p>
-    </div>
-</section>
+        <!-- Projects -->
+        <div class="project" data-category="javascript">
+            <h3>JavaScript Project</h3>
+        </div>
 
+        <div class="project" data-category="react">
+            <h3>React Project</h3>
+        </div>
+
+        <div class="project" data-category="other">
+            <h3>Other Project</h3>
+        </div>
+    </section>
 
     <!-- Contact Section -->
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-        <label for="name">Name: </label>
-        <input type="text" id="name" name="name" required>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
 
-        <button type="submit">Send Message</button>
-        <p id="formMessage" class="hidden"></p>
-    </form>
-</section>
+            <button type="submit">Send Message</button>
+            <p id="formMessage" class="hidden"></p>
+        </form>
+    </section>
 
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle">Toggle Dark Mode</button>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Annie Nguyen</p>
     </footer>
-
-    <button id="theme-toggle">Toggle Dark Mode</button>
-
-
+    
 </body>
 </html>

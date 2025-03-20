@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Contact form functionality
     const form = document.getElementById("contactForm");
     const formMessage = document.getElementById("formMessage");
 
@@ -34,4 +35,41 @@ document.addEventListener("DOMContentLoaded", () => {
     function validateEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
+
+    // Dark Mode Toggle functionality
+    const toggleButton = document.getElementById("theme-toggle");
+
+    toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Save user preference to local storage
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    });
+
+    // Load saved theme preference
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+    // Project Filtering functionality
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projects = document.querySelectorAll(".project");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const category = button.getAttribute("data-category");
+            
+            projects.forEach(project => {
+                if (category === "all" || project.getAttribute("data-category") === category) {
+                    project.style.display = "block";
+                } else {
+                    project.style.display = "none";
+                }
+            });
+        });
+    });
 });
